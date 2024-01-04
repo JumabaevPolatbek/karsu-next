@@ -1,7 +1,7 @@
 @use '../Styles/_mixins.scss';
 @import '../Styles/_default.scss';
 @import '../Styles/_variables.scss';
-.header-top {
+.header-top :global {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -217,7 +217,7 @@
 }
 
 @media (min-width: 1280px) {
-    .header-top {
+    .header-top :global{
         padding: 16px 0;
 
         .mobile,

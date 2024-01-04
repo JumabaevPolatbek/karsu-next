@@ -9,19 +9,11 @@ import MapLocation from '../Layouts/MapLocation';
 import Footer from '../Layouts/Footer';
 
 function Page() {
-    return (
-        <>
-            <Header />
-            <HeroSection />
-            <Partners />
-            <DeparturesSection />
-            <Graduate />
-            <InformationSection />
-            <SubmitDocuments />
-            <MapLocation />
-            <Footer />
-        </>
-    );
+	return (
+		<>
+			<p>Hello</p>
+		</>
+	);
 }
 
 export default Page;
