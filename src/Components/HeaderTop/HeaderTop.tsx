@@ -11,7 +11,7 @@ import facebook from '../../../public/images/header/facebook.svg';
 import whatsapp from '../../../public/images/header/whatsapp.svg';
 import avatar from '../../../public/images/header/avatar.svg';
 import phone from '../../../public/images/header/phone.svg';
-
+import vk from '../../../public/images/social/vk.svg';
 function HeaderTop() {
 	const [openMenu, setOpenMenu] = useState(false);
 
@@ -111,23 +111,17 @@ function HeaderTop() {
 				<ul className={'social__links'}>
 					<li>
 						<Link href="#" className={'social-link'}>
-							{/* <Image src="./images/social/vk.svg" alt="vk" /> */}
+							<Image src={vk} alt="vk" />
 						</Link>
 					</li>
 					<li>
 						<Link href="#" className={'social-link'}>
-							{/* <Image
-								src="./images/social/instagram.svg"
-								alt="instagram"
-							/> */}
+							<Image src={instagram} alt="instagram" />
 						</Link>
 					</li>
 					<li>
 						<Link href="#" className={'social-link'}>
-							{/* <Image
-								src="./images/social/whatsapp.svg"
-								alt="whatsapp"
-							/> */}
+							<Image src={whatsapp} alt="whatsapp" />
 						</Link>
 					</li>
 				</ul>
