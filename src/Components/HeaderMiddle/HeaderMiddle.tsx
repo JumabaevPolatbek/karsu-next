@@ -61,7 +61,6 @@ export const Navs: NavItem[] = [
 ];
 
 function HeaderMiddle() {
-	const router = useRouter();
 	const [openExtraMenu, setOpenExtraMenu] = useState(false);
 
 	const openMenu = () => {
