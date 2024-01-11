@@ -1,9 +1,8 @@
-'use client';
-import { v4 as uuid } from 'uuid';
+import styles from '../../styles/header/HeaderMiddle.module.scss';
+// import { v4 as uuid } from "uuid";
 import { useState } from 'react';
-import styles from '../../../Styles/header/headerMiddle.module.scss';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+
 export type NavItem = {
 	title: string;
 	href: string;
@@ -65,46 +64,36 @@ function HeaderMiddle() {
 
 	const openMenu = () => {
 		setOpenExtraMenu(!openExtraMenu);
-		// console.log('OpenExtraMenu', openExtraMenu);
 	};
-	function handleClick() {
-		return console.log('OK btn');
-	}
 	return (
 		<div className={styles['header-middle']}>
 			<nav>
 				<ul className={'menu'}>
 					{Navs.map((nav: NavItem, index: number) =>
 						index < 9 ? (
-							<li className={'menu__item'} key={uuid()}>
+							<li className={'menu__item'} key={index}>
 								<Link href={nav.href} className={'menu__link'}>
 									{nav.title}
 								</Link>
 							</li>
 						) : null
 					)}
-					<li className={'menu__item extra'} onClick={handleClick}>
+					<li className={'menu__item extra'}>
 						<button
-							className={
-								openExtraMenu
-									? `menu__btn active`
-									: `menu__btn null`
-							}
-							onClick={handleClick}
+							className={`menu__btn ${
+								openExtraMenu ? 'active' : null
+							}`}
+							onClick={openMenu}
 						>
 							Еще
 						</button>
-						<nav
-							className={`menu__btn ${
-								openExtraMenu ? 'open' : null
-							}`}
-						>
+						<nav className={`${openExtraMenu ? 'open' : null}`}>
 							<ul className={'extra-menu'}>
 								{Navs.map((nav: NavItem, index: number) =>
 									index >= 9 ? (
 										<li
 											className={'menu__item'}
-											key={uuid()}
+											key={index}
 										>
 											<Link
 												href={nav.href}
