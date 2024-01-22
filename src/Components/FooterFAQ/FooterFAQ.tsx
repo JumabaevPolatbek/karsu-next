@@ -26,7 +26,7 @@ function FooterFAQ() {
                         >
                             <p>Где учиться по удаленной специальности?</p>
                             <span>
-                                <Image src='/assets/plus.svg' alt='plus' />
+                                <Image src='/assets/plus.svg' alt='plus' width={10} height={10}/>
                             </span>
                         </h3>
                         <p

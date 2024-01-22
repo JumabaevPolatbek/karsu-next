@@ -1,5 +1,4 @@
-import styles from "./HeroForm.module.scss";
-import { v4 as uuid } from "uuid";
+import styles from "../../styles/banner/HeroForm.module.scss";
 import React, { useState } from "react";
 
 const firstStepOptions: string[] = [
@@ -49,30 +48,30 @@ function HeroForm() {
   return (
     <div className={styles["hero-form"]}>
       <form action="#">
-        <div className={styles["hero-form__info"]}>
-          <div className={styles["form__level"]}>
-            {[1, 2, 3].map((item: number) => (
+        <div className={"hero-form__info"}>
+          <div className={"form__level"}>
+            {[1, 2, 3].map((item: number,index:number) => (
               <span
-                key={uuid()}
-                className={styles[`${currentStep >= item ? "active" : null}`]}
+                key={index}
+                className={`${currentStep >= item ? "active" : null}`}
               ></span>
             ))}
           </div>
-          <div className={styles["form__header"]}>
-            <h2 className={styles["form__title"]}>Подобрать обучение</h2>
+          <div className={"form__header"}>
+            <h2 className={"form__title"}>Подобрать обучение</h2>
             <p>{currentStep} / 3</p>
           </div>
         </div>
-        <div className={styles["form__main"]}>
+        <div className={"form__main"}>
           <div
             className={
-              styles[`form__step-one ${currentStep === 1 ? "active" : null}`]
+              `form__step-one ${currentStep === 1 ? "active" : null}`
             }
           >
             <h3>Какое у Вас образование?</h3>
-            <div className={styles["first-step__options"]}>
+            <div className={"first-step__options"}>
               {firstStepOptions.map((option: string, index) => (
-                <div className={styles["option__group"]} key={uuid()}>
+                <div className={"option__group"} key={index}>
                   <input
                     type="radio"
                     name="education"
@@ -80,9 +79,9 @@ function HeroForm() {
                     onChange={changeEducation}
                     value={index}
                     className={
-                      styles[
+                      
                         `${data.education === `${index}` ? "checked" : null}`
-                      ]
+                      
                     }
                   />
                   <label htmlFor={option}>{option}</label>
@@ -91,7 +90,7 @@ function HeroForm() {
             </div>
             <button
               type="button"
-              className={styles["form__btn"]}
+              className={"form__btn"}
               disabled={data.education === ""}
               onClick={() => {
                 setCurrentStep(2);
@@ -104,31 +103,31 @@ function HeroForm() {
 
           <div
             className={
-              styles[`form__step-two ${currentStep === 2 ? "active" : null}`]
+              `form__step-two ${currentStep === 2 ? "active" : null}`
             }
           >
-            <div className={styles["awesome-input"]}>
+            <div className={"awesome-input"}>
               <input
                 type="text"
                 name="specialty"
                 id="specialty"
                 value={data.specialty}
                 onChange={changeValue}
-                className={styles[`${data.specialty !== "" ? "filled" : null}`]}
+                className={`${data.specialty !== "" ? "filled" : null}`}
                 required
               />
               <label htmlFor="specialty">Желаемая специальность</label>
             </div>
-            <div className={styles["second-step__options"]}>
-              {secondStepOptions.map((option: string) => (
-                <span key={uuid()} onClick={specTag}>
+            <div className={"second-step__options"}>
+              {secondStepOptions.map((option: string,index:number) => (
+                <span key={index} onClick={specTag}>
                   {option}
                 </span>
               ))}
             </div>
             <button
               type="button"
-              className={styles["form__btn"]}
+              className={"form__btn"}
               disabled={data.specialty === ""}
               onClick={() => {
                 setCurrentStep(3);
@@ -140,49 +139,49 @@ function HeroForm() {
 
           <div
             className={
-              styles[`form__step-three ${currentStep === 3 ? "active" : null}`]
+              `form__step-three ${currentStep === 3 ? "active" : null}`
             }
           >
-            <div className={styles["input__group"]}>
-              <div className={styles["awesome-input"]}>
+            <div className={"input__group"}>
+              <div className={"awesome-input"}>
                 <input
                   type="text"
                   name="name"
                   id="name"
                   value={data.name}
                   onChange={changeValue}
-                  className={styles[`${data.name !== "" ? "filled" : null}`]}
+                  className={`${data.name !== "" ? "filled" : null}`}
                   required
                 />
                 <label htmlFor="name">Ваше имя:</label>
               </div>
-              <div className={styles["awesome-input"]}>
+              <div className={"awesome-input"}>
                 <input
                   type="tel"
                   name="telefon"
                   id="telefon"
                   value={data.telefon}
                   onChange={changeValue}
-                  className={styles[`${data.telefon !== "" ? "filled" : null}`]}
+                  className={`${data.telefon !== "" ? "filled" : null}`}
                   required
                 />
                 <label htmlFor="telefon">Телефон</label>
               </div>
 
-              <div className={styles["awesome-input"]}>
+              <div className={"awesome-input"}>
                 <input
                   type="email"
                   name="email"
                   id="email"
                   value={data.email}
                   onChange={changeValue}
-                  className={styles[`${data.email !== "" ? "filled" : null}`]}
+                  className={`${data.email !== "" ? "filled" : null}`}
                   required
                 />
                 <label htmlFor="email">E-mail</label>
               </div>
             </div>
-            <button className={styles["form__btn"]}>Отправить заявку</button>
+            <button className={"form__btn"}>Отправить заявку</button>
             <p>
               Нажимая “Отправить”, Вы соглашаетесь с условиями обработки
               персональных данных

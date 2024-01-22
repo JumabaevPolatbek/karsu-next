@@ -1,6 +1,6 @@
-import styles from "./HeroSection.module.scss";
-import HeroBanner from "../../Components/HeroBanner";
-import HeroForm from "../../Components/HeroForm";
+import styles from "../../../styles/banner/HeroSection.module.scss";
+import HeroBanner from "../../HeroBanner";
+import HeroForm from "../../HeroForm";
 
 function HeroSection() {
   return (
