@@ -8,7 +8,7 @@ function Header() {
 		<header className="header">
 			<div className="container">
 				<HeaderTop />
-				<HeaderMiddle />
+				{/* <HeaderMiddle /> */}
 			</div>
 		</header>
 	);

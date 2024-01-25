@@ -4,6 +4,13 @@ import { Navs, NavItem } from '../HeaderMiddle/HeaderMiddle';
 // import { v4 as uuid } from "uuid";
 import Image from 'next/image';
 import Link from 'next/link';
+import logo from "../../images/assets/logo.svg"
+import avatar from "../../images/assets/avatar.svg"
+import instagram from "../../images/assets/social/instagram.svg"
+import telegram from "../../images/assets/social/telegram.svg"
+import whatsapp from "../../images/assets/social/whatsapp.svg"
+import phone from "../../images/assets/phone.svg"
+import vk from "../../images/assets/social/vk.svg"
 function HeaderTop() {
 	const [openMenu, setOpenMenu] = useState(false);
 
@@ -19,10 +26,8 @@ function HeaderTop() {
 			</p>
 			<div className={'header__logo'}>
 				<Image
-					src="/assets/logo.png"
+					src={logo}
 					alt="logo"
-					width={100}
-					height={100}
 				/>
 			</div>
 			<div className={'header-top__control'}>
@@ -32,10 +37,8 @@ function HeaderTop() {
 							<Link href={'#'} legacyBehavior>
 								<a href="#" className={'social-link'}>
 									<Image
-										src="/assets/instagram.svg"
+										src={instagram}
 										alt="instagram"
-										width={32}
-										height={32}
 									/>
 								</a>
 							</Link>
@@ -44,10 +47,8 @@ function HeaderTop() {
 							<Link href={'#'} legacyBehavior>
 								<a href="#" className={'social-link'}>
 									<Image
-										src="/assets/whatsapp.svg"
+										src={whatsapp}
 										alt="whatsapp"
-										width={32}
-										height={32}
 									/>
 								</a>
 							</Link>
@@ -56,10 +57,8 @@ function HeaderTop() {
 							<Link href={'#'} legacyBehavior>
 								<a href="#" className={'social-link'}>
 									<Image
-										src="/assets/telegram.svg"
-										alt="whatsapp"
-										width={32}
-										height={32}
+										src={telegram}
+										alt="telegram"
 									/>
 								</a>
 							</Link>
@@ -73,17 +72,13 @@ function HeaderTop() {
 						className={'mobile-phone-logo'}
 					>
 						<Image
-							src="/assets/phone.svg"
+							src={phone}
 							alt="phone"
-							width={32}
-							height={32}
 						/>
 					</Link>
 					<Image
-						src="/assets/avatar.svg"
+						src={avatar}
 						alt="avatar"
-						width={16}
-						height={16}
 					/>
 					<Link href="tel:+998933623621" className={'phone-number'}>
 						+7 (902) 311 36 64
@@ -118,30 +113,24 @@ function HeaderTop() {
 					<li>
 						<Link href="#" className={'social-link'}>
 							<Image
-								src="./images/social/vk.svg"
+								src={vk}
 								alt="vk"
-								width={16}
-								height={16}
 							/>
 						</Link>
 					</li>
 					<li>
 						<Link href="#" className={'social-link'}>
 							<Image
-								src="./images/social/instagram.svg"
+								src={instagram}
 								alt="instagram"
-								width={16}
-								height={16}
 							/>
 						</Link>
 					</li>
 					<li>
 						<Link href="#" className={'social-link'}>
 							<Image
-								src="/assets/whatsapp.svg"
+								src={whatsapp}
 								alt="whatsapp"
-								width={16}
-								height={16}
 							/>
 						</Link>
 					</li>
