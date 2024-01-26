@@ -8,7 +8,7 @@
   background-color: $color01;
   color: $color00;
 
-  &__info {
+  .footer__info {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,7 +164,7 @@
 
 @media (min-width: 1280px) {
   .footer :global {
-    &__info {
+    .footer__info {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;

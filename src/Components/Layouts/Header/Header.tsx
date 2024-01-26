@@ -1,4 +1,3 @@
-// import styles from '../../../../styles/header/Header.module.scss';
 'use client';
 import HeaderTop from '../../HeaderTop';
 import HeaderMiddle from '../../HeaderMiddle';
@@ -8,7 +7,7 @@ function Header() {
 		<header className="header">
 			<div className="container">
 				<HeaderTop />
-				{/* <HeaderMiddle /> */}
+				<HeaderMiddle />
 			</div>
 		</header>
 	);

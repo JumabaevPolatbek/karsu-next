@@ -1,7 +1,7 @@
 @use "../mixins.scss";
 @import "../variables.scss";
 // @import '../default.scss'
-.footer-faq {
+.footer-faq :global {
   margin-bottom: 64px;
 
   .title {
@@ -53,7 +53,7 @@
 }
 
 @media (min-width: 1280px) {
-  .footer-faq {
+  .footer-faq :global{
     margin-top: 64px;
 
     .title {

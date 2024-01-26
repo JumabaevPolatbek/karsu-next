@@ -1,5 +1,4 @@
 import styles from '../../styles/header/HeaderMiddle.module.scss';
-// import { v4 as uuid } from "uuid";
 import { useState } from 'react';
 import Link from 'next/link';
 

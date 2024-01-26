@@ -94,7 +94,7 @@
 }
 
 @media (min-width: 1280px) {
-  .footer-contact {
+  .footer-contact :global {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
