@@ -1,7 +1,11 @@
-import Image from 'next/image';
-// import styles from './page.module.css'
+import Partners from '../Components/Layouts/Partners';
+import HeroSection from '../Components/Layouts/HeroSection';
 
 export default function Home() {
-	return <p>Hello World</p>;
+    return (
+        <>
+            <HeroSection />
+            <Partners />
+        </>
+    );
 }
- 
