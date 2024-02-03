@@ -2,7 +2,7 @@
 @import "../variables.scss";
 // @import "../default.scss";
 
-.partners {
+.partners :global{
   max-width: 360px;
   margin: 32px auto;
   border-top: 1px solid $color06;
@@ -18,6 +18,9 @@
     position: relative;
     display: block !important;
     width: 100%;
+    .slick-track{
+      display: flex;
+    }
   }
 
   .slick-slide div {
@@ -31,7 +34,7 @@
 }
 
 @media (min-width: 1280px) {
-  .partners {
+  .partners  :global{
     max-width: 1280px;
     padding: 50px 0;
   }

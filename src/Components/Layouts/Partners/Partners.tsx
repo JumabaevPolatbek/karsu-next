@@ -29,13 +29,15 @@ function Partners() {
 				src={`/assets/partners/partner${partnerNumber}.png`}
 				key={index}
 				alt={`partner${partnerNumber}`}
+				width={100}
+				height={100}
 			/>
 		)
 	);
 
 	return (
 		<div className={styles['partners']}>
-			<div className={styles['partner']}>
+			<div className={'partner'}>
 				<Slider {...settings}>{renderSlides}</Slider>
 			</div>
 		</div>
