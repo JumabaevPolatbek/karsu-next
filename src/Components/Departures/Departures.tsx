@@ -1,4 +1,4 @@
-import styles from './Departures.module.scss';
+import styles from '../../styles/departuresSection/Departures.module.scss';
 import { DataType } from '../Layouts/DeparturesSection/DeparturesSection';
 import { useState } from 'react';
 import Link from 'next/link';
@@ -15,79 +15,69 @@ function Departures(props: Props) {
 			{data.map((d: DataType, index: number) =>
 				index < 6 ? (
 					<div
-						className={styles['departure']}
+						className={'departure'}
 						style={{
 							backgroundImage: `url(${d.backgroundImageUrl})`,
 						}}
 						key={index}
 					>
-						<div className={styles['departure__info']}>
-							<h2 className={styles['departure__title']}>
-								{d.title}
-							</h2>
-							<ul className={styles['departure__extra']}>
+						<div className={'departure__info'}>
+							<h2 className={'departure__title'}>{d.title}</h2>
+							<ul className={'departure__extra'}>
 								{d.extraInfo.map((info: string) => (
 									<li key={index}>{info}</li>
 								))}
 							</ul>
-							<Link
-								href="#"
-								className={styles['departure__link']}
-							>
+							<Link href="#" className={'departure__link'}>
 								Консультация
 							</Link>
 						</div>
 						<img
 							src={d.icon}
 							alt={d.title}
-							className={styles['departure__icon']}
+							className={'departure__icon'}
 						/>
 					</div>
 				) : null
 			)}
 			<button
-				className={
-					styles[
-						`departures__more ${openMoreDeparture ? 'open' : null}`
-					]
-				}
-				onClick={() => setOpenMoreDeparture(true)}
+				className={`departure__more ${
+					openMoreDeparture ? 'open' : null
+				}`}
+				onClick={() => setOpenMoreDeparture(!openMoreDeparture)}
 			>
 				Показать ещё {data.length - 6} направления
 			</button>
-			<div
-				className={styles[`extra ${openMoreDeparture ? 'open' : null}`]}
-			>
+			<div className={`extra ${openMoreDeparture ? 'open' : null}`}>
 				{data.map((d: DataType, index: number) =>
 					index >= 6 ? (
 						<div
-							className={styles['departure']}
+							className={'departure'}
 							style={{
 								backgroundImage: `url(${d.backgroundImageUrl})`,
 							}}
 							key={index}
 						>
-							<div className={styles['departure__info']}>
-								<h2 className={styles['departure__title']}>
+							<div className={'departure__info'}>
+								<h2 className={'departure__title'}>
 									{d.title}
 								</h2>
-								<ul className={styles['departure__extra']}>
+								<ul className={'departure__extra'}>
 									{d.extraInfo.map((info: string) => (
 										<li key={index}>{info}</li>
 									))}
 								</ul>
-								<Link
-									href="#"
-									className={styles['departure__link']}
-								>
+								<Link href="#" className={'departure__link'}>
 									консультация
 								</Link>
 							</div>
-							<Image
-								src={d.icon}
+							{/* <Image
+								// src={d.icon}
 								alt={d.title}
-								className={styles['departure__icon']}
-							/>
+								className={'departure__icon'}
+								width={104}
+								height={104}
+							/> */}
 						</div>
 					) : null
 				)}

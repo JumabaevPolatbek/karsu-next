@@ -1,15 +1,15 @@
 @use "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
-@import "../../styles/default.scss";
+// @import "../../styles/default.scss";
 
-.departures-section {
+.departures-section :global{
   font-family: "Inter";
   margin-bottom: 64px;
   .title {
-    @include mixins.title01();
-    margin-bottom: 12px;
-    color: $color01;
-  }
+      @include mixins.title01();
+      margin-bottom: 12px;
+      color: $color01;
+    }
 
   .tab {
     display: flex;

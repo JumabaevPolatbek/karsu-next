@@ -1,7 +1,7 @@
 @use "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
-@import '../../styles/default'
-.departures {
+// @import '../../styles/default'
+.departures :global {
   .departure {
     padding: 24px;
     width: 328px;
@@ -65,7 +65,7 @@
     }
   }
 
-  &__more {
+  .departure__more {
     @include mixins.button01-text();
     color: $color02;
     outline: none;
@@ -100,7 +100,7 @@
 }
 
 @media (min-width: 1280px) {
-  .departures {
+  .departures :global{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
