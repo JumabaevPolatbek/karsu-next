@@ -1,22 +1,22 @@
-@use "../../styles/mixins";
-@import "../../styles/variables.scss";
-@import "../../styles/default.scss";
+@use "../_mixins.scss";
+// @import "../_default.scss";
+@import "../_variables.scss";
 
-.graduate {
+.graduate :global {
   font-family: "Inter";
   margin: 64px 0;
 
-  &__title {
+  .graduate__title {
     @include mixins.title01();
     margin-bottom: 14px;
   }
 
-  &__text {
+  .graduate__text {
     @include mixins.text02();
     margin-bottom: 10px;
   }
 
-  &__types {
+  .graduate__types {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +54,7 @@
     }
   }
 
-  &__img {
+  .graduate__img {
     img {
       width: 100%;
     }
@@ -62,29 +62,29 @@
 }
 
 @media (min-width: 1280px) {
-  .graduate {
+  .graduate :global {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    &__info {
+    .graduate__info {
       width: 592px;
     }
 
-    &__title {
+    .graduate__title {
       margin-bottom: 27px;
     }
 
-    &__text {
+    .graduate__text {
       margin-bottom: 39px;
     }
 
-    &__img {
+    .graduate__img {
       flex-basis: 488px;
       height: 344px;
     }
 
-    &__types {
+    .graduate__types {
       width: 400px;
     }
   }

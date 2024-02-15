@@ -1,12 +1,12 @@
-import styles from './Information.module.scss';
-
+import styles from '../../styles/information/Information.module.scss';
+import Image, { StaticImageData } from 'next/image';
 type Props = {
 	data: {
 		type: string;
 		title: string;
 		heading: string;
 		text: string;
-		imgSrc: string;
+		imgSrc: StaticImageData;
 		date: string;
 	};
 };
@@ -16,87 +16,31 @@ function Information(props: Props) {
 	return (
 		<div className={styles['information']}>
 			{data.type === 'big' ? (
-				<div className={styles['big-post']}>
-					<p
-						className={
-							styles['information__title']
-						}
-					>
-						{data.title}
-					</p>
-					<h2
-						className={
-							styles['information__heading']
-						}
-					>
-						{data.heading}
-					</h2>
-					<p
-						className={
-							styles['information__text']
-						}
-					>
-						{data.text}
-					</p>
-					<img
+				<div className={'big-post'}>
+					<p className={'information__title'}>{data.title}</p>
+					<h2 className={'information__heading'}>{data.heading}</h2>
+					<p className={'information__text'}>{data.text}</p>
+					<Image
 						src={data.imgSrc}
 						alt={data.title}
-						className={
-							styles['information__img']
-						}
+						className={'information__img'}
 					/>
-					<p
-						className={
-							styles['information__date']
-						}
-					>
-						{data.date}
-					</p>
+					<p className={'information__date'}>{data.date}</p>
 				</div>
 			) : (
-				<div className={styles['small-post']}>
-					<div
-						className={
-							styles['information__container']
-						}
-					>
-						<p
-							className={
-								styles['information__title']
-							}
-						>
-							{data.title}
-						</p>
-						<h2
-							className={
-								styles[
-									'information__heading'
-								]
-							}
-						>
+				<div className={'small-post'}>
+					<div className={'information__container'}>
+						<p className={'information__title'}>{data.title}</p>
+						<h2 className={'information__heading'}>
 							{data.heading}
 						</h2>
-						<p
-							className={
-								styles['information__text']
-							}
-						>
-							{data.text}
-						</p>
-						<p
-							className={
-								styles['information__date']
-							}
-						>
-							{data.date}
-						</p>
+						<p className={'information__text'}>{data.text}</p>
+						<p className={'information__date'}>{data.date}</p>
 					</div>
-					<img
+					<Image
 						src={data.imgSrc}
 						alt={data.title}
-						className={
-							styles['information__img']
-						}
+						className={'information__img'}
 					/>
 				</div>
 			)}
