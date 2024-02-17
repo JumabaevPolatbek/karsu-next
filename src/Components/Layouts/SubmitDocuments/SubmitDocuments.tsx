@@ -27,7 +27,7 @@ function SubmitDocuments() {
 					</div>
 				</div>
 
-				<div className={'departures'}>
+				<div className={styles['departures']}>
 					<div
 						className={'departure'}
 						style={{

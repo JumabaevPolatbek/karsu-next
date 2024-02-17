@@ -42,26 +42,27 @@
         @include mixins.descriptor01();
         color: $color04;
     }
-}
+    .small-post {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
 
-.small-post :global {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-
-    .information__container {
-        width: 209px;
+        .information__container {
+            width: 209px;
 
 
-        .information__text {
-            -webkit-line-clamp: 2;
+            .information__text {
+                -webkit-line-clamp: 2;
+            }
+        }
+
+        img {
+            width: 71px;
         }
     }
-
-    img {
-        width: 71px;
-    }
 }
+
+
 
 @media (min-width: 1280px) {
     .information :global {
@@ -84,21 +85,20 @@
             margin-bottom: 16px;
             width: 100%;
         }
-    }
+        .small-post {
+                .information__img {
+                    margin: 0;
+                }
 
-    .small-post :global {
-        .information {
-            .information__img {
-                margin: 0;
-            }
+                .information__container {
+                    width: 224px;
+                }
 
-            .information__container {
-                width: 224px;
-            }
-
-            .information__text {
-                margin-bottom: 6px;
-            }
+                .information__text {
+                    margin-bottom: 6px;
+                }
         }
     }
+
+    
 }
