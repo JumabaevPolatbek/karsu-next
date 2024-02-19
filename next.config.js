@@ -5,4 +5,8 @@ module.exports = {
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'styles')],
 	},
+	i18n:{
+		locales:["kaa","uz","en","ru"],
+		defaultLocale:"kaa"
+	}
 };
