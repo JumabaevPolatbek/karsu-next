@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const path = require('path');
+const createNextIntlPlugin = require('next-intl/plugin');
 
-module.exports = {
+const withNextIntl = createNextIntlPlugin();
+const nextConfig = {
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'styles')],
 	},
-	i18n:{
-		locales:["kaa","uz","en","ru"],
-		defaultLocale:"kaa"
-	}
 };
+module.exports = withNextIntl(nextConfig);
