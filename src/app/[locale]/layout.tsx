@@ -5,6 +5,7 @@ import '../../styles/globals.scss';
 import Header from '../../Components/Layouts/Header';
 import Footer from '../../Components/Layouts/Footer';
 import { getTranslations } from 'next-intl/server';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +24,10 @@ export async function generateMetadata({params:{locale}}:Props,parent:ResolvingM
 	const t = await getTranslations({locale,namespace:"MetaData"})
 	return {
 		title:t("title"),
-		description:t("description")
+		description:t("description"),
+		icons:{
+			icon:"https://karsu.uz/wp-content/themes/newkarsu4/assets/img/favicons/favicon-32x32.png"
+		}
 	}
 }
 export default function RootLayout({
@@ -33,12 +37,15 @@ export default function RootLayout({
 	children: React.ReactNode;
 	params: { locale: string };
 }) {
+	const messages=useMessages()
 	return (
 		<html lang={locale}>
 			<body className={inter.className}>
+				<NextIntlClientProvider messages={messages}>
 				<Header />
 				<main>{children}</main>
 				<Footer />
+				</NextIntlClientProvider>
 			</body>
 		</html>
 	);

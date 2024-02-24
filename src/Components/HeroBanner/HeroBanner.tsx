@@ -3,7 +3,16 @@ import styles from '../../styles/banner/HeroBanner.module.scss';
 import shareSvg from '../../images/assets/share.svg';
 import heroAvatar from '../../images/assets/hero-avatar.svg';
 import banner from '../../images/assets/fon-800/city/group_184_5.png';
+import { ReactNode } from 'react';
+import { useTranslations } from 'next-intl';
+type Props={
+    children?:ReactNode,
+    param?:{
+        locale?:string
+    }
+}
 function HeroBanner() {
+    const t=useTranslations("Header")
     return (
         <div
             className={styles['hero-banner']}
@@ -12,7 +21,7 @@ function HeroBanner() {
             }}
         >
             <h1 className={'hero-title'}>
-                Образование онлайн в Нижнем Новгороде
+                {t("title")}
                 <div className={'share__btn'}>
                     <Image src={shareSvg} alt='share' />
                 </div>

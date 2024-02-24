@@ -4,19 +4,21 @@ import { Navs, NavItem } from '../HeaderMiddle/HeaderMiddle';
 // import { v4 as uuid } from "uuid";
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from "../../images/assets/logo.svg"
+import logo from "../../images/assets/logo-karsu.png"
 import avatar from "../../images/assets/avatar.svg"
 import instagram from "../../images/assets/social/instagram.svg"
 import telegram from "../../images/assets/social/telegram.svg"
 import whatsapp from "../../images/assets/social/whatsapp.svg"
 import phone from "../../images/assets/phone.svg"
 import vk from "../../images/assets/social/vk.svg"
+import { useTranslations } from 'next-intl';
 function HeaderTop() {
 	const [openMenu, setOpenMenu] = useState(false);
 
 	const handleClick = () => {
 		setOpenMenu(!openMenu);
 	};
+	const t = useTranslations("Header")
 	return (
 		<div className={styles['header-top']} onClick={handleClick}>
 			<p className={'hamburger-menu'}>
@@ -28,6 +30,8 @@ function HeaderTop() {
 				<Image
 					src={logo}
 					alt="logo"
+					width={100}
+					height={100}
 				/>
 			</div>
 			<div className={'header-top__control'}>
