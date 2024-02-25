@@ -17,7 +17,7 @@ function HeroBanner() {
         <div
             className={styles['hero-banner']}
             style={{
-                backgroundImage: `url(${banner.src})`,
+                backgroundImage: `url(https://karsu.uz/wp-content/uploads/2021/01/DSCN5748.jpg)`,
             }}
         >
             <h1 className={'hero-title'}>
@@ -37,7 +37,7 @@ function HeroBanner() {
                     <li>100% онлайн</li>
                 </ul>
                 <div className={'hero-avatar'}>
-                    <Image src={heroAvatar} alt='univer-avatar' />
+                    <Image src="https://karsu.uz/wp-content/themes/newkarsu4/assets/img/logo-small.png" alt='univer-avatar' width={50} height={50} />
                 </div>
             </div>
         </div>

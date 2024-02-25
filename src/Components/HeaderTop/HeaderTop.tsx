@@ -12,6 +12,7 @@ import whatsapp from "../../images/assets/social/whatsapp.svg"
 import phone from "../../images/assets/phone.svg"
 import vk from "../../images/assets/social/vk.svg"
 import { useTranslations } from 'next-intl';
+import LocalSwitcher from '../local-switcher';
 function HeaderTop() {
 	const [openMenu, setOpenMenu] = useState(false);
 
@@ -87,9 +88,7 @@ function HeaderTop() {
 					<Link href="tel:+998933623621" className={'phone-number'}>
 						+7 (902) 311 36 64
 					</Link>
-					<Link href="#" className="header-btn">
-						Подать документы
-					</Link>
+					<LocalSwitcher/>
 				</div>
 			</div>
 
