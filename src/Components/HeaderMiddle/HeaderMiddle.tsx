@@ -1,6 +1,7 @@
 import styles from '../../styles/header/HeaderMiddle.module.scss';
 import { useState } from 'react';
 import Link from 'next/link';
+import { Menu, Menus } from '@/redux/types/menu';
 
 export type NavItem = {
 	title: string;
@@ -58,7 +59,7 @@ export const Navs: NavItem[] = [
 	},
 ];
 
-function HeaderMiddle() {
+function HeaderMiddle({data}:{data?:Menus}) {
 	const [openExtraMenu, setOpenExtraMenu] = useState(false);
 
 	const openMenu = () => {
@@ -68,14 +69,14 @@ function HeaderMiddle() {
 		<div className={styles['header-middle']}>
 			<nav>
 				<ul className={'menu'}>
-					{Navs.map((nav: NavItem, index: number) =>
-						index < 9 ? (
-							<li className={'menu__item'} key={index}>
-								<Link href={nav.href} className={'menu__link'}>
-									{nav.title}
+					{data?.map((item) =>
+						
+							<li className={'menu__item'} key={item.id}>
+								<Link href={item.id} className={'menu__link'}>
+									{item.title}
 								</Link>
 							</li>
-						) : null
+						
 					)}
 					<li className={'menu__item extra'}>
 						<button

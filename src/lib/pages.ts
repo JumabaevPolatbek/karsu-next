@@ -10,7 +10,7 @@ type lang = string;
 
 export async function getPages(params: lang) {
 	const response = await fetch(
-		`https://api.yulbasali.uz/api/pages/{${params}}`
+		`https://api.yulbasali.uz/api/getMenu/${params}`
 	);
 	return response.json();
 }

@@ -6,6 +6,7 @@ import Header from '../../Components/Layouts/Header';
 import Footer from '../../Components/Layouts/Footer';
 import { getTranslations } from 'next-intl/server';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
+import { ReduxProvider } from '../StoreProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -41,11 +42,13 @@ export default function RootLayout({
 	return (
 		<html lang={locale}>
 			<body className={inter.className}>
+				<ReduxProvider>
 				<NextIntlClientProvider messages={messages}>
-				<Header />
+				<Header locale={locale}/>
 				<main>{children}</main>
 				<Footer />
 				</NextIntlClientProvider>
+				</ReduxProvider>
 			</body>
 		</html>
 	);
