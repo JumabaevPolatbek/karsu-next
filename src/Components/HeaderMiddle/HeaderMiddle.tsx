@@ -2,115 +2,38 @@ import styles from '../../styles/header/HeaderMiddle.module.scss';
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, Menus } from '@/redux/types/menu';
+import ExtraMenu from './ExtraMenu';
 
-export type NavItem = {
-	title: string;
-	href: string;
-};
-
-export const Navs: NavItem[] = [
-	{
-		title: 'Направление',
-		href: '#',
-	},
-	{
-		title: 'Вузы',
-		href: '#',
-	},
-	{
-		title: 'Колледжи',
-		href: '#',
-	},
-	{
-		title: 'Профессии',
-		href: '#',
-	},
-	{
-		title: 'Отзывы',
-		href: '#',
-	},
-	{
-		title: 'Учебным заведениям',
-		href: '#',
-	},
-	{
-		title: 'Вопрос-ответ',
-		href: '#',
-	},
-	{
-		title: 'Статьи',
-		href: '#',
-	},
-	{
-		title: 'Как поступит',
-		href: '#',
-	},
-	{
-		title: 'Контакты',
-		href: '#',
-	},
-	{
-		title: 'Шансы по ЕГЭ',
-		href: '#',
-	},
-	{
-		title: 'Extra',
-		href: '#',
-	},
-];
-
-function HeaderMiddle({data}:{data?:Menus}) {
-	const [openExtraMenu, setOpenExtraMenu] = useState(false);
-
-	const openMenu = () => {
-		setOpenExtraMenu(!openExtraMenu);
-	};
-	return (
-		<div className={styles['header-middle']}>
-			<nav>
-				<ul className={'menu'}>
-					{data?.map((item) =>
-						
-							<li className={'menu__item'} key={item.id}>
-								<Link href={item.id} className={'menu__link'}>
-									{item.title}
-								</Link>
-							</li>
-						
-					)}
-					<li className={'menu__item extra'}>
-						<button
-							className={`menu__btn ${
-								openExtraMenu ? 'active' : null
-							}`}
-							onClick={openMenu}
-						>
-							Еще
-						</button>
-						<nav className={`${openExtraMenu ? 'open' : null}`}>
-							<ul className={'extra-menu'}>
-								{Navs.map((nav: NavItem, index: number) =>
-									index >= 9 ? (
-										<li
-											className={'menu__item'}
-											key={index}
-										>
-											<Link
-												href={nav.href}
-												className={'menu__link'}
-											>
-												{nav.title}
-											</Link>
-										</li>
-									) : null
-								)}
-							</ul>
-						</nav>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	);
+function HeaderMiddle({ data, locale }: { data?: Menus; locale: string }) {
+    return (
+        <div className={styles['header-middle']}>
+            <nav>
+                <ul className={'menu'}>
+                    {data?.map((item) =>
+                        item.children.length > 1 ? (
+                            <ExtraMenu
+                                childMenu={item.children}
+                                key={item.id}
+                                locale={locale}
+                            >
+                                {item.title}
+                            </ExtraMenu>
+                        ) : (
+                            <li className={'menu__item'} key={item.id}>
+                                <Link
+                                    href={`/${locale}/${item.id}`}
+                                    className={'menu__link'}
+                                    // locale={locale}
+                                >
+                                    {item.title}
+                                </Link>
+                            </li>
+                        )
+                    )}
+                </ul>
+            </nav>
+        </div>
+    );
 }
 
 export default HeaderMiddle;

@@ -8,7 +8,7 @@ function HeroSection() {
         <div className='container'>
             <div className={styles['hero-section']}>
                 <HeroBanner />
-                <HeroForm />
+                {/* <HeroForm /> */}
             </div>
         </div>
     );
