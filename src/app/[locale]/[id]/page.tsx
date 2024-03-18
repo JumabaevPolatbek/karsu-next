@@ -2,17 +2,28 @@
 
 import { getMenuById } from './action';
 import { getPages } from '@/lib/pages';
-import { Menu } from '@/redux/types/menu';
+import { Menu, Menus } from '@/redux/types/menu';
+import { cookies } from 'next/headers';
 async function getMenuByID(params: string) {
     const response = await fetch(`https://api.yulbasali.uz/api/${params}`);
     return response.json();
 }
+export async function generateStaticParams() {
+    const data: Menus = await fetch('http://localhost:3000/api/menu').then(
+        (res) => res.json()
+    );
+    console.log(data);
+    return data.map((menu: Menu) => ({
+        id: menu.id,
+        title: menu.title,
+    }));
+}
 export default async function Page({
     params,
 }: {
-    params: { id: string; locale: string };
+    params: { id: string; locale: string; title: string };
 }) {
     // const dataMenu = getMenuById(params.id);
-    // console.log(dataMenu);
+    console.log(params);
     return <div>hello</div>;
 }

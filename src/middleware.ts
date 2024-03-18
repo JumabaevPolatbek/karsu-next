@@ -3,12 +3,12 @@ import { locales, localePrefix } from './navigation';
 
 export default createMiddleware({
     // A list of all locales that are supported
-    // locales: ['en', 'kaa', 'uz', 'ru'],
-    locales,
+    locales: ['en', 'kaa', 'uz', 'ru'],
+    // locales,
     // Used when no locale matches
     defaultLocale: 'uz',
-    localePrefix,
-    localeDetection: false,
+    // localePrefix,
+    localeDetection: true,
 });
 
 export const config = {

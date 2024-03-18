@@ -29,7 +29,9 @@ function ExtraMenu({
                     {childMenu.map((item) => (
                         <li className={'menu__item'} key={item.id}>
                             <Link
-                                href={`/${locale}/${item.slug}`}
+                                href={`/${locale}/${children
+                                    ?.toLocaleString()
+                                    .toLowerCase()}/${item.slug}`}
                                 className={'menu__link'}
                             >
                                 {item.title}

@@ -14,7 +14,7 @@ export default async function Home({
     params: { locale: string };
 }) {
     const dataPosts = await getPosts(locale);
-    console.log(dataPosts);
+    // console.log(dataPosts);
     return (
         <>
             <HeroSection />
