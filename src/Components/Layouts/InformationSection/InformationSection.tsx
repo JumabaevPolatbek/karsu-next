@@ -2,26 +2,32 @@ import Information from '../../Information/Information';
 import styles from '../../../styles/information/InformationSection.module.scss';
 import big from '../../../images/assets/posts/big.png';
 import small from '../../../images/assets/posts/small.png';
-const bigPost = {
-	type: 'big',
-	title: 'Новости',
-	heading:
-		'Геологи раскрывают окружающую залежи редкоземельных элементов тайну',
-	text: 'Группа научных исследователей смогла залежи редкоземельных элементов окружающую залежи редкоземельных элементовv окружающую залежи редкоземельных элементов окружающую залежи редкоземельных элементовокружающую залежи редкоземельных элементов окружающую залежи редкоземельных элементовv окружающую залежи редкоземельных элементов',
-	imgSrc: big,
-	date: '12 ноября 2020',
-};
+import { Posts } from '@/lib/posts';
+// const bigPost = {
+// 	type: 'big',
+// 	title: 'Новости',
+// 	heading:
+// 		'Геологи раскрывают окружающую залежи редкоземельных элементов тайну',
+// 	text: 'Группа научных исследователей смогла залежи редкоземельных элементов окружающую залежи редкоземельных элементовv окружающую залежи редкоземельных элементов окружающую залежи редкоземельных элементовокружающую залежи редкоземельных элементов окружающую залежи редкоземельных элементовv окружающую залежи редкоземельных элементов',
+// 	imgSrc: big,
+// 	date: '12 ноября 2020',
+// };
 
-const smallPost = {
-	type: 'small',
-	title: 'абитуриенту',
-	heading: 'Создан антибиотик на основе яда азиатской осы',
-	text: 'Ключевым элементом яда  залежи редкоземельных элементов окружающую залежи редкоземельных элементовv окружающую залежи редкоземельных элементовзалежи редкоземельных элементов окружающую залежи редкоземельных элементовv окружающую залежи редкоземельных элементов',
-	imgSrc: small,
-	date: '12 ноября 2020',
+// const smallPost = {
+// 	type: 'small',
+// 	title: 'абитуриенту',
+// 	heading: 'Создан антибиотик на основе яда азиатской осы',
+// 	text: 'Ключевым элементом яда  залежи редкоземельных элементов окружающую залежи редкоземельных элементовv окружающую залежи редкоземельных элементовзалежи редкоземельных элементов окружающую залежи редкоземельных элементовv окружающую залежи редкоземельных элементов',
+// 	imgSrc: small,
+// 	date: '12 ноября 2020',
+// };
+type Props = {
+	params?: {
+		locale: string;
+	};
+	data?: Posts;
 };
-
-function InformationSection() {
+function InformationSection({ params, data }: Props) {
 	return (
 		<div className="container">
 			<div className={styles['information-section']}>
@@ -44,7 +50,7 @@ function InformationSection() {
 				</div>
 				<div className={'posts'}>
 					<div className={'post-block'}>
-						<Information data={bigPost} />
+						{/* <Information data={bigPost} />
 						<div className={'small-block'}>
 							<Information data={smallPost} />
 							<Information data={smallPost} />
@@ -60,7 +66,10 @@ function InformationSection() {
 						<div className={'small-block'}>
 							<Information data={smallPost} />
 							<Information data={smallPost} />
-						</div>
+						</div> */}
+						{data?.map((post) => (
+							<Information data={post} key={post.ID} />
+						))}
 					</div>
 				</div>
 			</div>

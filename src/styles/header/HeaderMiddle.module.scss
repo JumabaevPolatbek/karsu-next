@@ -17,6 +17,7 @@
 
             &__item {
                 display: inline-block;
+                position: relative;
             }
 
             &__item a {
@@ -59,23 +60,42 @@
                 right: 0;
                 transition: transform 0.4s ease;
                 transform: scale(0);
-                transform-origin: top right;
+                transform-origin: top left;
                 z-index: 999;
                 &.open {
                     transform: scale(1);
                 }
+                &.menu__extra-nest-nav{
+                    transform: scale(1);
+                    top: 0;
+                    left: 100%;
+                    width: 100%;
 
+                    ul {
+                        background-color: $color00;
+                        border: 1px solid $color06;
+                        box-shadow: 0px 3px 15px $color05;
+                        border-radius: 4px;
+                        padding: 13px 1px;
+                        width:515px;
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                }
                 ul {
                     background: $color00;
                     border: 1px solid $color06;
                     box-shadow: 0px 3px 15px $color05;
                     border-radius: 4px;
                     padding: 13px 1px;
-
+                    width: 100%;
                     li {
                         width: 170px;
 
                         &:not(:last-of-type) a {
+                            margin-bottom: 10px;
+                        }
+                        &:not(:last-of-type) .span {
                             margin-bottom: 10px;
                         }
                     }
@@ -88,6 +108,19 @@
                         transition: background-color;
                         width: 100%;
 
+                        &:hover {
+                            background-color: $color07;
+                        }
+                    }
+                    li .span {
+                        cursor: pointer;
+                        border-radius: 0;
+                        padding: 7px 18px;
+                        background-color: $color00;
+                        @include mixins.caption02();
+                        transition: background-color;
+                        width: 100%;
+                        height: 100%;
                         &:hover {
                             background-color: $color07;
                         }
