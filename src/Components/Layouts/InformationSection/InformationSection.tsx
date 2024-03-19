@@ -22,9 +22,7 @@ import { Posts } from '@/lib/posts';
 // 	date: '12 ноября 2020',
 // };
 type Props = {
-	params?: {
-		locale: string;
-	};
+	params?: string;
 	data?: Posts;
 };
 function InformationSection({ params, data }: Props) {
@@ -67,9 +65,15 @@ function InformationSection({ params, data }: Props) {
 							<Information data={smallPost} />
 							<Information data={smallPost} />
 						</div> */}
-						{data?.map((post) => (
-							<Information data={post} key={post.ID} />
-						))}
+						{data?.map((post, index) =>
+							post.image_url !== null ? (
+								<Information
+									data={post}
+									key={post.ID}
+									locale={params}
+								/>
+							) : null
+						)}
 					</div>
 				</div>
 			</div>

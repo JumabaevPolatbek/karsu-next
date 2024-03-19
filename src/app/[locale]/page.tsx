@@ -22,7 +22,7 @@ export default async function Home({
 			<Partners />
 			{/* <DeparturesSection /> */}
 			{/* <Graduate /> */}
-			<InformationSection data={dataPosts} />
+			<InformationSection data={dataPosts} params={locale} />
 			<SubmitDocuments />
 		</>
 	);

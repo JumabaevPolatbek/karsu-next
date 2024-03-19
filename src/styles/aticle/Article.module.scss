@@ -1,7 +1,8 @@
-@use '../../styles/mixins.scss';
-@import '../../styles/variables.scss';
-@import '../../styles/default'
-.article {
+@use '../mixins.scss';
+@import '../variables.scss';
+// @import '../../styles/default';
+
+.article :global {
     font-family: 'Inter';
 
     &__caption {
@@ -199,7 +200,7 @@
 }
 
 @media (min-width: 1280px) {
-    .article {
+    .article :global {
         width: 800px;
 
         &__caption {
