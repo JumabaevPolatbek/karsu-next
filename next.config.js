@@ -24,6 +24,6 @@ const nextConfig = {
 		// ],
 		domains: ['karus.uz', 'api.karsu.uz'],
 	},
-	distDir: 'build',
+	// distDir: 'build',
 };
 module.exports = withNextIntl(nextConfig);
