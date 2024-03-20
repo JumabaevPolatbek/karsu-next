@@ -9,25 +9,9 @@
 
         &__item {
             display: inline-block;
-        }
-
-        &__item a {
-            color: $color01;
-            @include mixins.caption02();
-            display: inline-block;
-            padding: 6px 15px;
-            border-radius: 28px;
-            background-color: $color07;
-
-            &:active {
-                color: $color03;
-            }
-        }
-
-        margin-bottom: 32px;
-    }
-
-    .menu__btn {
+            .extra {
+        position: relative;
+        .menu__btn {
         color: $color01;
         @include mixins.caption02();
         display: inline-block;
@@ -37,21 +21,17 @@
         cursor: pointer;
         border: none;
         outline: none;
-        &.active {
-            color: $color03;
+            &.active {
+                color: $color03;
+            }
         }
-    }
-
-    .extra {
-        position: relative;
-
         nav {
             position: absolute;
             top: calc(100% + 10px);
             right: 0;
-            transition: transform 0.4s ease;
-            transform: scale(0);
-            transform-origin: top right;
+            // transition: transform 0.4s ease;
+            // transform: scale(0);
+            // transform-origin: top right;
 
             &.open {
                 transform: scale(1);
@@ -87,4 +67,26 @@
             }
         }
     }
+        }
+
+        &__item a {
+            color: $color01;
+            @include mixins.caption02();
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 28px;
+            background-color: $color07;
+
+            &:active {
+                color: $color03;
+            }
+        }
+
+        margin-bottom: 32px;
+        
+    }
+
+    
+
+    
 }

@@ -26,26 +26,12 @@ function HeaderMiddle({ data, locale }: { data?: Menus; locale: string }) {
 								locale={locale}
 								clickFun={handleClick}
 								id={Number(item.id)}
-								state={active}
-								setState={setActive}
+								// state={active}
+								// setState={setActive}
 							>
 								{item.title}
 							</ExtraMenu>
-						) : (
-							<li
-								className={'menu__item'}
-								key={item.id}
-								onClick={resetActive}
-							>
-								<Link
-									href={`/${locale}/${item.id}`}
-									className={'menu__link'}
-									// locale={locale}
-								>
-									{item.title}
-								</Link>
-							</li>
-						)
+						) : null
 					)}
 				</ul>
 			</nav>

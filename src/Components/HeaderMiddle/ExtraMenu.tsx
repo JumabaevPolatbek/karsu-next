@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../styles/header/ExtraMenu.module.scss';
 import { Children } from '@/redux/types/menu';
 import NestExtraMenu from './NestExtraMenu';
@@ -17,46 +17,68 @@ function ExtraMenu({
 	locale: string;
 	clickFun: (e: React.MouseEvent) => void;
 	id: number;
-	state: number;
-	setState: React.Dispatch<React.SetStateAction<number>>;
+	state?: number;
+	setState?: React.Dispatch<React.SetStateAction<number>>;
 }) {
 	const [openExtraMenu, setOpenExtraMenu] = useState(false);
 
 	const openMenu = () => {
 		setOpenExtraMenu(!openExtraMenu);
 	};
-	const checkClick = () => {
-		state === id ? null : clickFun;
+	const ref = useRef<HTMLLIElement>();
+	useEffect(() => {
+		const handler = (event: any) => {
+			if (
+				openExtraMenu &&
+				ref.current &&
+				!ref.current.contains(event.target)
+			) {
+				setOpenExtraMenu(false);
+			}
+		};
+		document.addEventListener('mousedown', handler);
+		document.addEventListener('touchstart', handler);
+		return () => {
+			// Cleanup the event listener
+			document.removeEventListener('mousedown', handler);
+			document.removeEventListener('touchstart', handler);
+		};
+	}, [openExtraMenu]);
+	const onMouseEnter = () => {
+		setOpenExtraMenu(true);
 	};
-	console.log(state === id);
+	const onMouseLeave = () => {
+		setOpenExtraMenu(false);
+	};
 	return (
-		<li className={'menu__item extra'}>
+		<li
+			className={'menu__item extra'}
+			ref={ref as React.RefObject<HTMLLIElement>}
+			onMouseEnter={onMouseEnter}
+			onMouseLeave={onMouseLeave}
+		>
 			<button
-				className={`menu__btn ${state === id ? 'active' : null}`}
-				onClick={clickFun}
+				className={`menu__btn ${openExtraMenu ? 'active' : null}`}
+				onClick={openMenu}
 				id={`${id}`}
 			>
 				{children}
+				<span className="menu__btn-symbol"></span>
 			</button>
-			<nav className={`${state === id ? 'open' : null}`}>
+			<nav
+				className={`${openExtraMenu ? 'open' : null}`}
+				onMouseLeave={onMouseLeave}
+			>
 				<ul className={'extra-menu'}>
 					{childMenu.map((item) =>
-						item.children.length > 1 ? (
-							<NestExtraMenu
-								child={item.children}
-								key={item.id}
-								parent={item}
-								locale={locale}
-							>
-								{item.title}
-							</NestExtraMenu>
-						) : (
+						Number(item.id) === 29 ? null : ( // </NestExtraMenu> // 	{item.title} // > // 	locale={locale} // 	parent={item} // 	key={item.id} // 	child={item.children} // <NestExtraMenu
 							<li className={'menu__item'} key={item.id}>
 								<Link
 									href={`/${locale}/${item.parent_id}/${item.id}`}
 									className={'menu__link'}
 								>
 									{item.title}
+									<span className="special-symbol"></span>
 								</Link>
 							</li>
 						)

@@ -21,6 +21,7 @@ export default async function Page({
 }: {
 	params: { locale: string };
 }) {
+	console.log(locale);
 	const dataPosts = await getPosts(locale);
 	return (
 		<>
