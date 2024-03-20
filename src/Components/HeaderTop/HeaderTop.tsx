@@ -30,7 +30,8 @@ function HeaderTop() {
 				<span></span>
 			</p>
 			<div className={'header__logo'} onClick={() => router.push('/')}>
-				<Image src={logo} alt="logo" width={100} height={100} />
+				<Image src={logo} alt="logo" className="header__logo-img" />
+				<div className="header__logo-text">{t('title')}</div>
 			</div>
 			<div className={'header-top__control'}>
 				<div className={'header-top__social'}>

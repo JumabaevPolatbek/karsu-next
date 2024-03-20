@@ -32,10 +32,12 @@ function Departures(props: Props) {
 								Консультация
 							</Link>
 						</div>
-						<img
+						<Image
 							src={d.icon}
 							alt={d.title}
 							className={'departure__icon'}
+							width={50}
+							height={50}
 						/>
 					</div>
 				) : null
@@ -71,13 +73,13 @@ function Departures(props: Props) {
 									консультация
 								</Link>
 							</div>
-							{/* <Image
-								// src={d.icon}
+							<Image
+								src={d.icon}
 								alt={d.title}
 								className={'departure__icon'}
-								width={104}
-								height={104}
-							/> */}
+								width={50}
+								height={50}
+							/>
 						</div>
 					) : null
 				)}

@@ -4,6 +4,7 @@ const createNextIntlPlugin = require('next-intl/plugin');
 
 const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
+	// output: 'export',
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'styles')],
 	},
@@ -23,5 +24,6 @@ const nextConfig = {
 		// ],
 		domains: ['karus.uz', 'api.karsu.uz'],
 	},
+	distDir: 'build',
 };
 module.exports = withNextIntl(nextConfig);

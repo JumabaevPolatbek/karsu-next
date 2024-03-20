@@ -6,9 +6,10 @@ type Props = {
 	children: React.ReactNode;
 	child: Children2[];
 	parent: Children;
+	locale: string;
 };
 function NestExtraMenu(props: Props) {
-	const { children, child, parent } = props;
+	const { children, child, parent, locale } = props;
 	const [openExtraMenu, setOpenExtraMenu] = useState(false);
 
 	const openMenu = () => {
@@ -27,8 +28,7 @@ function NestExtraMenu(props: Props) {
 					{child.map((item) => (
 						<li className={'menu__item'} key={item.id}>
 							<Link
-								// href={`/${locale}/${item.parent_id}/${item.id}`}
-								href={'#'}
+								href={`/${locale}/${parent.parent_id}/${item.parent_id}/${item.id}`}
 								className={'menu__link'}
 							>
 								{item.title}

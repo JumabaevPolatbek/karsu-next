@@ -1,5 +1,4 @@
-import styles from './Breadcrumb.module.scss';
-import { v4 as uuid } from 'uuid';
+// import styles from './Breadcrumb.module.scss';
 
 export type BreadcrumbType = {
 	urls: { link: string; text: string }[];
@@ -8,9 +7,9 @@ export type BreadcrumbType = {
 function Breadcrumb(props: BreadcrumbType) {
 	const { urls } = props;
 	return (
-		<div className={styles['container']}>
-			<div className={styles['breadcrumb']}>
-				<ul>
+		<div className={'container'}>
+			<div className={'breadcrumb'}>
+				{/* <ul>
 					{urls.map((url: any) => (
 						<li key={uuid()}>
 							<a href={url.link}>
@@ -18,7 +17,7 @@ function Breadcrumb(props: BreadcrumbType) {
 							</a>
 						</li>
 					))}
-				</ul>
+				</ul> */}
 			</div>
 		</div>
 	);

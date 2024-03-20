@@ -1,11 +1,11 @@
-import Article from "../../Components/Article";
-import HeroForm from "../../Components/HeroForm";
-import styles from  "./ArticleSection.module.scss";
+// import Article from "../../Components/Article";
+// import HeroForm from "../../Components/HeroForm";
+// import styles from  "./ArticleSection.module.scss";
 
 function ArticleSection() {
-  return (
-    <div className="container">
-      <div className={styles["article-section"]}>
+	return (
+		<div className="container">
+			{/* <div className={styles["article-section"]}>
         <section>
           <Article />
           <aside>
@@ -38,9 +38,9 @@ function ArticleSection() {
             </div>
           </aside>
         </section>
-      </div>
-    </div>
-  );
+      </div> */}
+		</div>
+	);
 }
 
 export default ArticleSection;

@@ -4,23 +4,29 @@ import DeparturesSection from '../../Components/Layouts/DeparturesSection';
 import Graduate from '../../Components/Layouts/Graduate';
 import InformationSection from '../../Components/Layouts/InformationSection';
 import SubmitDocuments from '../../Components/Layouts/SubmitDocuments';
-import { Posts, getPosts } from '@/lib/posts';
-import { promises } from 'dns';
+import { getPosts } from '@/lib/posts';
 
-export default async function Home({
-	children,
+// export async function generateStaticParams() {
+//     const data: Menus = await fetch('http://localhost:3000/api/menu').then(
+//         (res) => res.json()
+//     );
+//     console.log(data);
+//     return data.map((menu: Menu) => ({
+//         id: menu.id,
+//         title: menu.title,
+//     }));
+// }
+export default async function Page({
 	params: { locale },
 }: {
-	children: React.ReactNode;
 	params: { locale: string };
 }) {
 	const dataPosts = await getPosts(locale);
-	// console.log(dataPosts);
 	return (
 		<>
 			<HeroSection />
 			<Partners />
-			{/* <DeparturesSection /> */}
+			<DeparturesSection />
 			{/* <Graduate /> */}
 			<InformationSection data={dataPosts} params={locale} />
 			<SubmitDocuments />

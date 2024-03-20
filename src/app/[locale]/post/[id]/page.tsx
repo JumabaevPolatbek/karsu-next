@@ -1,6 +1,17 @@
 import Article from '@/Components/Article';
 import { getPostById } from './actions';
 
+// export async function generateStaticParams() {
+//     const data: Menus = await fetch('http://localhost:3000/api/menu').then(
+//         (res) => res.json()
+//     );
+//     console.log(data);
+//     return data.map((menu: Menu) => ({
+//         id: menu.id,
+//         title: menu.title,
+//     }));
+// }
+
 type Props = {
 	params: {
 		locale: string;
@@ -13,7 +24,6 @@ async function Page(props: Props) {
 		params: { locale, id },
 	} = props;
 	const data = await getPostById(id);
-	console.log(data);
 	return <Article data={data} />;
 }
 

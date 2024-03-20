@@ -9,7 +9,6 @@ type Props = {
 
 function Information(props: Props) {
 	const { data, locale } = props;
-	console.log(data.image_url);
 	return (
 		<div className={styles['information']}>
 			{/* {data.type === 'big' ? ( */}

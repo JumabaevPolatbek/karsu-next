@@ -31,7 +31,7 @@ function SubmitDocuments() {
 					<div
 						className={'departure'}
 						style={{
-							backgroundImage: `url(${fonDeparture})`,
+							backgroundImage: `url(${fonDeparture.src})`,
 						}}
 					>
 						<div className={'departure__info'}>
@@ -55,7 +55,7 @@ function SubmitDocuments() {
 					<div
 						className={'departure'}
 						style={{
-							backgroundImage: `url(${fonDeparture})`,
+							backgroundImage: `url(${fonDeparture.src})`,
 						}}
 					>
 						<div className={'departure__info'}>
@@ -79,7 +79,7 @@ function SubmitDocuments() {
 					<div
 						className={'departure'}
 						style={{
-							backgroundImage: `url(${fonDeparture})`,
+							backgroundImage: `url(${fonDeparture.src})`,
 						}}
 					>
 						<div className={'departure__info'}>
@@ -103,7 +103,7 @@ function SubmitDocuments() {
 					<div
 						className={'departure'}
 						style={{
-							backgroundImage: `url(${fonDeparture})`,
+							backgroundImage: `url(${fonDeparture.src})`,
 						}}
 					>
 						<div className={'departure__info'}>
@@ -127,7 +127,7 @@ function SubmitDocuments() {
 					<div
 						className={'departure'}
 						style={{
-							backgroundImage: `url(${fonDeparture})`,
+							backgroundImage: `url(${fonDeparture.src})`,
 						}}
 					>
 						<div className={'departure__info'}>
@@ -151,7 +151,7 @@ function SubmitDocuments() {
 					<div
 						className={'departure'}
 						style={{
-							backgroundImage: `url(${fonDeparture})`,
+							backgroundImage: `url(${fonDeparture.src})`,
 						}}
 					>
 						<div className={'departure__info'}>

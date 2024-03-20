@@ -42,7 +42,8 @@
 
 @media (min-width: 1280px) {
     .hero-banner :global {
-        flex-basis: 800px;
+        // flex-basis: 800px;
+        width: 100%;
         height: 496px;
         padding: 40px;
         .hero-title {

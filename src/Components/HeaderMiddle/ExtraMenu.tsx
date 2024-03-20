@@ -46,6 +46,7 @@ function ExtraMenu({
 								child={item.children}
 								key={item.id}
 								parent={item}
+								locale={locale}
 							>
 								{item.title}
 							</NestExtraMenu>
