@@ -33,14 +33,31 @@
                     color: $color03;
                 }
             }
-
+            .nest__item{
+                position: relative;
+                padding: 2px 5px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+                p{
+                    font-size: 16px;
+                    line-height: 22px;
+                    padding: 0 0 0 15px;
+                }
+            }
             margin-bottom: 32px;
         }
 
         .menu__btn {
             color: $color01;
             @include mixins.caption02();
-            display: inline-block;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 6px 15px;
             border-radius: 28px;
             background-color: $color07;
@@ -58,6 +75,7 @@
                 content: "\00AB";
                 transform: rotate(-90deg);
             }
+            
         }
 
         .extra {
@@ -66,7 +84,7 @@
             nav {
                 position: absolute;
                 display: none;
-                top: calc(100% + 5px);
+                top: calc(100%);
                 right: 0;
                 transition: display 0.4s ease;
                 // transform: scale(0);
@@ -76,9 +94,10 @@
                     display: block;
                 }
                 &.menu__extra-nest-nav{
-                    transform: scale(1);
-                    top: 0;
-                    left: 100%;
+                    display: block;
+                    // transform: scale(1);
+                    top: -6px;
+                    left: calc(100% + 2px);
                     width: 100%;
 
                     ul {

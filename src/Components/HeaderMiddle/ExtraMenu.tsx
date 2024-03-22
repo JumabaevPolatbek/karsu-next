@@ -1,25 +1,18 @@
 import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react';
-import styles from '../../styles/header/ExtraMenu.module.scss';
+import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { Children } from '@/redux/types/menu';
 import NestExtraMenu from './NestExtraMenu';
-function ExtraMenu({
-	childMenu,
-	children,
-	locale,
-	clickFun,
-	id,
-	state,
-	setState,
-}: {
-	childMenu: Children[];
+import Image from 'next/image';
+import ArrowDown from '../../images/assets/icons_arrow/arrow_down.png';
+
+type TProps = {
 	children: React.ReactNode;
+	menuItems: Children[];
 	locale: string;
-	clickFun: (e: React.MouseEvent) => void;
-	id: number;
-	state?: number;
-	setState?: React.Dispatch<React.SetStateAction<number>>;
-}) {
+};
+
+function ExtraMenu(props: TProps) {
+	const { children, menuItems, locale } = props;
 	const [openExtraMenu, setOpenExtraMenu] = useState(false);
 
 	const openMenu = () => {
@@ -60,25 +53,36 @@ function ExtraMenu({
 			<button
 				className={`menu__btn ${openExtraMenu ? 'active' : null}`}
 				onClick={openMenu}
-				id={`${id}`}
 			>
 				{children}
-				<span className="menu__btn-symbol"></span>
+				<Image
+					src={ArrowDown.src}
+					width={24}
+					height={24}
+					alt="arrow-down"
+				/>
 			</button>
 			<nav
-				className={`${openExtraMenu ? 'open' : null}`}
+				className={openExtraMenu ? 'open' : 'null'}
 				onMouseLeave={onMouseLeave}
 			>
 				<ul className={'extra-menu'}>
-					{childMenu.map((item) =>
-						Number(item.id) === 29 ? null : ( // </NestExtraMenu> // 	{item.title} // > // 	locale={locale} // 	parent={item} // 	key={item.id} // 	child={item.children} // <NestExtraMenu
+					{menuItems.map((item) =>
+						item.children.length > 1 ? (
+							<NestExtraMenu
+								child={item.children}
+								parent={item}
+								locale={locale}
+							>
+								{item.title}
+							</NestExtraMenu>
+						) : (
 							<li className={'menu__item'} key={item.id}>
 								<Link
 									href={`/${locale}/${item.parent_id}/${item.id}`}
 									className={'menu__link'}
 								>
 									{item.title}
-									<span className="special-symbol"></span>
 								</Link>
 							</li>
 						)
