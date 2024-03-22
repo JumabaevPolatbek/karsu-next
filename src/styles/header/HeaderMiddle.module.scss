@@ -35,7 +35,7 @@
             }
             .nest__item{
                 position: relative;
-                padding: 2px 5px;
+                padding: 6px 5px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -47,6 +47,9 @@
                     font-size: 16px;
                     line-height: 22px;
                     padding: 0 0 0 15px;
+                }
+                &:hover{
+                    background-color: $color07;
                 }
             }
             margin-bottom: 32px;
@@ -85,7 +88,8 @@
                 position: absolute;
                 display: none;
                 top: calc(100%);
-                right: 0;
+                left: 0;
+                width: 100%;
                 transition: display 0.4s ease;
                 // transform: scale(0);
                 // transform-origin: top left;
@@ -96,19 +100,20 @@
                 &.menu__extra-nest-nav{
                     display: block;
                     // transform: scale(1);
-                    top: -6px;
+                    top: 0;
                     left: calc(100% + 2px);
                     width: 100%;
 
-                    ul {
+                    >ul {
                         background-color: $color00;
                         border: 1px solid $color06;
                         box-shadow: 0px 3px 15px $color05;
                         border-radius: 4px;
                         padding: 13px 1px;
-                        width:515px;
+                        width:calc(100% + 100px);
                         display: flex;
-                        flex-wrap: wrap;
+                        flex-direction: column;
+                        align-items:start;
                     }
                 }
                 ul {

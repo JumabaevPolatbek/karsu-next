@@ -73,6 +73,7 @@ function ExtraMenu(props: TProps) {
 								child={item.children}
 								parent={item}
 								locale={locale}
+								key={item.id}
 							>
 								{item.title}
 							</NestExtraMenu>
