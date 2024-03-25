@@ -62,14 +62,14 @@ function HeaderTop() {
 
 				<div className={'header__contact'}>
 					<Link
-						href="tel:+998933623621"
+						href="tel:+998612236078"
 						className={'mobile-phone-logo'}
 					>
 						<Image src={phone} alt="phone" />
 					</Link>
-					<Image src={avatar} alt="avatar" />
-					<Link href="tel:+998933623621" className={'phone-number'}>
-						+7 (902) 311 36 64
+					{/* <Image src={avatar} alt="avatar" /> */}
+					<Link href="tel:+998612236078" className={'phone-number'}>
+						+998 61 223 60 78
 					</Link>
 					<LocalSwitcher />
 				</div>

@@ -1,0 +1,5 @@
+@use '../mixins.scss';
+@import '../variables.scss';
+.content :global{
+    padding: 10px 5px 25px 5px;
+}

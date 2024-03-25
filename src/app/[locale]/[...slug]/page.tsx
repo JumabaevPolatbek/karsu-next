@@ -1,8 +1,6 @@
-// import { useRouter } from 'next/router';
-
 import { getMenuById } from './action';
 import parser from 'html-react-parser';
-
+import styes from '../../../styles/pageinfo/pageInfo.module.scss';
 // export async function generateStaticParams() {
 //     const data: Menus = await fetch('http://localhost:3000/api/menu').then(
 //         (res) => res.json()
@@ -20,5 +18,9 @@ export default async function Page({
 }) {
 	const { slug } = params;
 	const dataMenu = await getMenuById(slug[slug.length - 1]);
-	return <div className="container">{parser(dataMenu.content)}</div>;
+	return (
+		<div className="container">
+			<div className={styes['content']}>{parser(dataMenu.content)}</div>
+		</div>
+	);
 }

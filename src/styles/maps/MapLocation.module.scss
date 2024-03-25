@@ -1,8 +1,8 @@
-@use "../../styles/mixins.scss";
-@import "../../styles/variables.scss";
-@import "../../styles/default.scss";
+@use "../mixins.scss";
+@import "../variables.scss";
+// @import "../../styles/default.scss";
 
-.location {
+.location :global{
   margin: 64px 0;
   font-family: "Inter";
 
@@ -19,7 +19,7 @@
 }
 
 @media (min-width: 1280px) {
-  .location {
+  .location :global{
     .title {
       width: 700px;
       margin-bottom: 50px;

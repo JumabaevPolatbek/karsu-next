@@ -3,33 +3,17 @@ import styles from '../../../styles/information/InformationSection.module.scss';
 import big from '../../../images/assets/posts/big.png';
 import small from '../../../images/assets/posts/small.png';
 import { Posts } from '@/lib/posts';
-// const bigPost = {
-// 	type: 'big',
-// 	title: 'Новости',
-// 	heading:
-// 		'Геологи раскрывают окружающую залежи редкоземельных элементов тайну',
-// 	text: 'Группа научных исследователей смогла залежи редкоземельных элементов окружающую залежи редкоземельных элементовv окружающую залежи редкоземельных элементов окружающую залежи редкоземельных элементовокружающую залежи редкоземельных элементов окружающую залежи редкоземельных элементовv окружающую залежи редкоземельных элементов',
-// 	imgSrc: big,
-// 	date: '12 ноября 2020',
-// };
-
-// const smallPost = {
-// 	type: 'small',
-// 	title: 'абитуриенту',
-// 	heading: 'Создан антибиотик на основе яда азиатской осы',
-// 	text: 'Ключевым элементом яда  залежи редкоземельных элементов окружающую залежи редкоземельных элементовv окружающую залежи редкоземельных элементовзалежи редкоземельных элементов окружающую залежи редкоземельных элементовv окружающую залежи редкоземельных элементов',
-// 	imgSrc: small,
-// 	date: '12 ноября 2020',
-// };
+import { useTranslations } from 'next-intl';
 type Props = {
 	params?: string;
 	data?: Posts;
 };
 function InformationSection({ params, data }: Props) {
+	const t = useTranslations('News');
 	return (
 		<div className="container">
 			<div className={styles['information-section']}>
-				<h2 className={'title'}>Полезная информация</h2>
+				<h2 className={'title'}>{t('title')}</h2>
 				<div className={'information__block'}>
 					<ul className={'information__types'}>
 						<li className={'active'}>

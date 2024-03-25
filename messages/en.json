@@ -6,5 +6,31 @@
     "Header":{
         "title":"Karakalpak State University",
         "p":"named after Berdakh"
+    },
+    "Questions":{
+        "q1":{
+            "title":"Is Double degree program offered at your university?",
+            "answer":"Every year, our university tries to sign an agreement with famous foreign universities on the Double degree program. For this question, you should apply to our International Cooperation Department.",
+            "value":1
+        },
+        "q2":{
+            "title":"I couldn't enter a higher educational institution with low scores. Where can I get full information if I want to study by super-contract?",
+            "answer":"There is a payment and contract department on the first floor of the main building of our university. You can get the information you need by referring to this section.",
+            "value":2
+        },
+        "q3":{
+            "title":"A few years ago, I was temporarily suspended from my studies on academic leave. What can I do to recover my studies?",
+            "answer":"If you contact the Educational-Methodology Department of our university, our experts will help you to resume your studies.",
+            "value":3
+        }
+    },
+    "Map":{
+        "title":"Our location on the map"
+    },
+    "FooterFAQ":{
+        "title":"Question answer:"
+    },
+    "News":{
+        "title":"NEWS"
     }
 }

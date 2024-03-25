@@ -7,7 +7,7 @@ function SubmitDocuments() {
 	return (
 		<div className={styles['submit-documents']}>
 			<div className="container">
-				<div className={'documents__info'}>
+				{/* <div className={'documents__info'}>
 					<h2 className={'title'}>Подать документы</h2>
 					<p className={'description'}>
 						После того, как вы отправите документы мы свяжемся с
@@ -25,7 +25,7 @@ function SubmitDocuments() {
 						/>
 						<p className={'result'}>Найдено 6 вузов</p>
 					</div>
-				</div>
+				</div> */}
 
 				<div className={styles['departures']}>
 					<div

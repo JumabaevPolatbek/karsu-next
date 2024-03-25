@@ -6,5 +6,32 @@
     "Header":{
         "title":"Qaraqalpaq mamleketlik universiteti",
         "p":"Berdaq atindagi"
+    },
+    "Questions":{
+        "q1":{
+            "title":"Sizdiń universitette Doble degree baǵdarlaması boyınsha oqıw barma?",
+            "answer":"Bizdiń universitet hár jılı shet eldiń tanıqlı VUZları menen double degree baǵdarlaması boyınsha shártnama dúziwge háeket qıladı, bul sorawıńız boyınsha bizdiń’ xalilıq aralıq birge islesiw bólimimizge xabarlasıwıńızǵa tuwrı keledi.",
+            "value":1
+        },
+        "q2":{
+            "title":"Men oqıwǵa kiriwge testten az ball jiynap, oqıwǵa kire almadım, super kontrakt arqalı oqıwdı qalesem, kimnen tolıq maǵlıwmat alsam boladı?",
+            "answer":"Universitetimiz bas imaratı 1-qabatında tólem kontrakt bólimi bar, sol bólimge xabarlasıp, ózińizge kerekli informacialarǵa iye bolsańız boladı.",
+            "value":2
+        },
+        "q3":{
+            "title":"Men birneshe jıl aldın, oqıwımdı akademik dem alıs alıp, oqıwdan shetletilgen edim, oqıwımdı tiklew ushın ne qılsam boladı?",
+            "answer":"Bizdiń universitetimizdiń oqıw metodikalıq basqarmasına xabarlassańız, qanigelerimiz oqıwıńızdı tiklewińizge járdem beredi.",
+            "value":3
+        }
+    },
+    "Map":{
+        "title":"Kartadaǵı bizdiń address"
+    },
+    "FooterFAQ":{
+        "title":"Soraw hám juwaplar:"
+    },
+    "News":{
+        "title":"Jańalıqlar"
     }
 }
+

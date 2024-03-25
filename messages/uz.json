@@ -6,5 +6,31 @@
     "Header":{
         "title":"Qoraqalpoq Davlat Universiteti",
         "p":"Berdaq nomidagi"
+    },
+    "Questions":{
+        "q1":{
+            "title":"Universitetingizda Double degree dasturi bo‘yicha taʼlim yo‘lga qo‘yilganmi?",
+            "answer":"Bizning oliygoh har yili chet elning mashhur OTMlari bilan double degree dasturi bo‘yicha shartnoma tuzishga harakat qiladi. Bu savolingiz bo‘yicha bizning xalqaro hamkorlik bo‘limimizga murojaat qilishingizga to‘g‘ri keladi.",
+            "value":1
+        },
+        "q2":{
+            "title":"Men kam ball yig‘ib o‘qishga kira olmadim. Super-kontrakt orqali o‘qishni xohlasam kimdan to‘liq maʼlumot olsam bo‘ladi?",
+            "answer":"Universitetimiz bosh binosining birinchi qavatida to‘lov-kontrakt bo‘limi bor. Shu bo‘limga murojaat qilib o‘zingizga kerakli ma’lumotlarga ega bo‘lishingiz mumkin.",
+            "value":2
+        },
+        "q3":{
+            "title":"Men bir necha yil avval akademik taʼtil olib o‘qishdan vaqtincha chetlatilgan edim. O‘qishimni tiklash uchun nima qilsam bo‘ladi?",
+            "answer":"Universitetimizning o‘quv-metodika boshqarmasiga murojaat qilsangiz mutaxassislarimiz o‘qishingizni tiklashda yordam beradi.",
+            "value":3
+        }
+    },
+    "Map":{
+        "title":"Xaritadagi bizning manzil"
+    },
+     "FooterFAQ":{
+        "title":"Savol javob:"
+     },
+     "News":{
+        "title":"Yangiliklar"
     }
 }

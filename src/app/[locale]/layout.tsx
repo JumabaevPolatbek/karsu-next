@@ -6,9 +6,12 @@ import Footer from '../../Components/Layouts/Footer';
 import { getTranslations } from 'next-intl/server';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { ReduxProvider } from '../StoreProvider';
-
+import localFont from 'next/font/local';
 const inter = Inter({ subsets: ['latin'] });
-
+const myFont = localFont({
+	src: '../../styles/fonts/Inter-VariableFont_slnt,wght.ttf',
+	display: 'swap',
+});
 type Props = {
 	params: { locale: string };
 };
@@ -35,7 +38,7 @@ export default function RootLayout({
 	const messages = useMessages();
 	return (
 		<html lang={locale}>
-			<body className={inter.className}>
+			<body className={myFont.className}>
 				<ReduxProvider>
 					<NextIntlClientProvider messages={messages}>
 						<Header locale={locale} />

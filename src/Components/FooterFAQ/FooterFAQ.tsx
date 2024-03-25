@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import plus from '../../images/assets/plus.svg';
+import { useTranslations } from 'next-intl';
 function FooterFAQ() {
 	const [active, setActive] = useState(0);
 
@@ -11,36 +12,28 @@ function FooterFAQ() {
 		const id = (e.target as HTMLSpanElement).id;
 		setActive(+id);
 	};
+	const t = useTranslations('Questions');
+	const fq = useTranslations('FooterFAQ');
+	const keys = ['q1', 'q2', 'q3'] as const;
 	return (
 		<div className={styles['footer-faq']}>
-			<h1 className={'title'}>Вопрос-ответ:</h1>
+			<h1 className={'title'}>{fq('title')}</h1>
 			<div className={'questions'}>
 				{/* [1,2,3,4,5] massiviniń ornında maǵlıwmatlar massivi bolıwı kerek */}
 
-				{[1, 2, 3, 4, 5].map((i: number) => (
-					<div className={'question-answer'} key={i}>
+				{keys.map((key, index) => (
+					<div className={'question-answer'} key={key}>
 						<h3
 							className={'question'}
-							id={`${i}`}
+							id={`${index}+1`}
 							onClick={handleClick}
 						>
-							<p>Где учиться по удаленной специальности?</p>
+							<p>{t(`${key}.title`)}</p>
 							<span>
 								<Image src={plus} alt="plus" />
 							</span>
 						</h3>
-						<p
-							className={`answer ${
-								active === i ? 'active' : null
-							}`}
-						>
-							Зачеты и экзамены проходят в виде тестов внутри
-							электронного кабинета по расписанию. Тесты открытые,
-							закрытые, с вариантами, иногда нужно решить задачу
-							или написать эссе. Есть три попытки, можно выбрать
-							лучший результат. Время каждой попытки ограничено,
-							обычно от 30 до 45 минут на тест.
-						</p>
+						<p className={`answer active`}>{t(`${key}.answer`)}</p>
 					</div>
 				))}
 			</div>

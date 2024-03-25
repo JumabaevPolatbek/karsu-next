@@ -5,6 +5,7 @@ import Graduate from '../../Components/Layouts/Graduate';
 import InformationSection from '../../Components/Layouts/InformationSection';
 import SubmitDocuments from '../../Components/Layouts/SubmitDocuments';
 import { getPosts } from '@/lib/posts';
+import MapLocation from '@/Components/Layouts/MapLocation';
 
 // export async function generateStaticParams() {
 //     const data: Menus = await fetch('http://localhost:3000/api/menu').then(
@@ -31,6 +32,7 @@ export default async function Page({
 			{/* <Graduate /> */}
 			<InformationSection data={dataPosts} params={locale} />
 			<SubmitDocuments />
+			<MapLocation />
 		</>
 	);
 }
