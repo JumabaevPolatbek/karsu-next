@@ -5,12 +5,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import plus from '../../images/assets/plus.svg';
 import { useTranslations } from 'next-intl';
+import FAQItems from './FAQitem';
 function FooterFAQ() {
-	const [active, setActive] = useState(0);
+	const [active, setActive] = useState<number | null>(null);
+
+	const handleChangeState = (id: number) => {
+		setActive((prevIndex) => (prevIndex === id ? null : id));
+	};
 
 	const handleClick = (e: React.MouseEvent) => {
 		const id = (e.target as HTMLSpanElement).id;
-		setActive(+id);
+		handleChangeState(Number(id));
 	};
 	const t = useTranslations('Questions');
 	const fq = useTranslations('FooterFAQ');
@@ -22,19 +27,13 @@ function FooterFAQ() {
 				{/* [1,2,3,4,5] massiviniń ornında maǵlıwmatlar massivi bolıwı kerek */}
 
 				{keys.map((key, index) => (
-					<div className={'question-answer'} key={key}>
-						<h3
-							className={'question'}
-							id={`${index}+1`}
-							onClick={handleClick}
-						>
-							<p>{t(`${key}.title`)}</p>
-							<span>
-								<Image src={plus} alt="plus" />
-							</span>
-						</h3>
-						<p className={`answer active`}>{t(`${key}.answer`)}</p>
-					</div>
+					<FAQItems
+						title={t(`${key}.title`)}
+						answer={t(`${key}.answer`)}
+						key={index}
+						onToggle={() => handleChangeState(index)}
+						active={active === index}
+					/>
 				))}
 			</div>
 		</div>
